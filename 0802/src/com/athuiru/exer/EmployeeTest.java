@@ -39,6 +39,5 @@ public class EmployeeTest {
                 + employee2.name + ", age = " + employee2.age + ", salary = " + employee2.salary
                 + ", birthday = " + employee2.birthday.year + "-" + employee2.birthday.month
                 + "-" + employee2.birthday.day);
-
     }
 }
