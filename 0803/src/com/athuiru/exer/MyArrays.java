@@ -108,7 +108,7 @@ public class MyArrays {
     }
 
     /**
-     * 对int[]类型数组进行排序（从小到大排序）
+     * 对int[]类型数组进行排序, 从小到大排序
      *
      * @param arr 要排序的数组
      * @return 排序后的数组
@@ -118,12 +118,54 @@ public class MyArrays {
         for (int j = 0; j < arr.length - 1; j++) {
             for (int i = 0; i < arr.length - 1 - j; i++) {
                 if (arr[i] > arr[i + 1]) {
-                    int tempt = arr[i];
-                    arr[i] = arr[i + 1];
-                    arr[i + 1] = tempt;
+                    swap(arr, i, i + 1);
                 }
             }
         }
+    }
+
+    /**
+     * 对int[]类型数组进行排序, sortMethod是asc-升序，desc-降序
+     *
+     * @param arr        要排序的数组
+     * @param sortMethod 排序方式
+     * @return 排序后的数组
+     */
+    public void sort(int[] arr, String sortMethod) {
+        if ("asc".equals(sortMethod)) {
+            // 冒泡排序
+            for (int j = 0; j < arr.length - 1; j++) {
+                for (int i = 0; i < arr.length - 1 - j; i++) {
+                    if (arr[i] > arr[i + 1]) {
+                        swap(arr, i, i + 1);
+                    }
+                }
+            }
+        } else if ("desc".equals(sortMethod)) {
+            // 冒泡排序
+            for (int j = 0; j < arr.length - 1; j++) {
+                for (int i = 0; i < arr.length - 1 - j; i++) {
+                    if (arr[i] < arr[i + 1]) {
+                        swap(arr, i, i + 1);
+                    }
+                }
+            }
+        } else {
+            System.out.println("sortMethod输入有误！");
+        }
+    }
+
+    /**
+     * 交换数组两个位置元素的值
+     *
+     * @param arr 要交换元素的数组
+     * @param i   元素1位置
+     * @param j   元素2位置
+     */
+    public void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 
     /**
